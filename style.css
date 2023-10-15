@@ -96,6 +96,63 @@ header > img{
     object-fit: cover;
 }
 
+/* GALLERY*/
+
+main h1{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 3.8rem;
+
+    padding: 3.6rem 0px 0px 3.2rem;
+
+}
+
+main .gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.2rem;
+}
+
+.item{
+    background-color: var(--color-base-white);
+    border-radius: 0.8rem;
+
+    overflow: hidden;
+}
+
+.item:hover{
+    transition: 0.7s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.item .details{
+    padding: 2.2rem;
+}
+
+
+
+.details h2{
+    line-height: 3.0rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+
+    color: var(--color-base-gray-900);
+
+    margin-bottom: 1.2rem;
+}
+
+.tags{
+    display: inline;
+
+    padding:0.8rem;
+    border-radius: 0.6rem;
+
+    background-color: var(--color-base-gray-100);
+
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
 footer p{
     text-align: center;
     
