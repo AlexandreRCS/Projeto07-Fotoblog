@@ -60,6 +60,7 @@ header form{
 }
 
 header ul{
+    position: relative;
     font-size: 1.8rem;
 
     list-style: none;
@@ -160,3 +161,7 @@ footer p{
     font-weight: 600;
     color: var(--color-base-gray-900);
 }
+
+
+/* ANIMATON */
+
