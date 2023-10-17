@@ -11,9 +11,11 @@
     font-size: 62.5%;
 
     --color-base-white: #fff;
-    --color-base-gray-100:#f5f5f5;
-    --color-base-gray-300:#8d8d99;
-    --color-base-gray-900:#202024;
+    --color-base-gray-100:#fdf8f8fa;
+    --color-base-gray-200:#f1eefc;
+    --color-base-gray-300:#f0f0f5;
+    --color-base-gray-800:#0404f850;
+    --color-base-gray-900:#0c0cf5;
 }
 
 body{
@@ -55,6 +57,12 @@ header,nav,ul{
     font-weight: 600;
 }
 
+header{
+    --scaly:-100%;
+    background-color: var(--color-base-gray-200);
+    animation: top-bottom 1s;
+}
+
 header form{
     flex: 1;
 }
@@ -65,6 +73,10 @@ header ul{
 
     list-style: none;
     
+}
+
+li{
+    cursor: pointer;
 }
 
 .active{
@@ -95,6 +107,7 @@ header > img{
 
     border-radius: 50%;
     object-fit: cover;
+    border: 2px solid var(--color-base-gray-100);
 }
 
 /* GALLERY*/
@@ -115,15 +128,18 @@ main .gallery{
 }
 
 .item{
+
     background-color: var(--color-base-white);
     border-radius: 0.8rem;
 
     overflow: hidden;
+
+    animation: scale-up-center 0.7s ease-in-out ;
 }
 
 .item:hover{
     transition: 0.7s;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: var(--color-base-gray-800) 0px 5px 15px;
 }
 
 .item .details{
@@ -154,6 +170,12 @@ main .gallery{
     font-size: 1.2rem;
 }
 
+footer{
+    --scaly:100%;
+    animation: top-bottom 1s ;
+    background-color: var(--color-base-gray-200);
+}
+
 footer p{
     text-align: center;
     
@@ -165,3 +187,53 @@ footer p{
 
 /* ANIMATON */
 
+.scale-up-center {
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+li:after{
+    content: '';
+    display: block;
+
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-base-gray-900);
+    transition: 0.3s;
+}
+
+li:hover::after{
+    transition: 0.3s;
+    width: 100%;
+}
+
+
+ @-webkit-keyframes scale-up-center {
+    0% {
+        opacity: 0;
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+        opacity: 0;
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+
+  @keyframes top-bottom {
+        0%{
+            transform: translateY(var(--scaly));
+        }
+  }
